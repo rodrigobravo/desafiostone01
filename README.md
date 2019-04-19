@@ -1,7 +1,7 @@
 # desafiostone01
 Desafio Stone Tecnologia RC
 
-Instruções para criação do banco inicial e tabelas :
+InstruÃ§Ãµes para criaÃ§Ã£o do banco inicial e tabelas :
 
 	create database stone;
 	use stone;
@@ -14,33 +14,33 @@ Instruções para criação do banco inicial e tabelas :
 
 ---------------------------------
 
-Instalação dos pacotes node iniciais:
+InstalaÃ§Ã£o dos pacotes node iniciais:
 
 	npm install -g sequelize-cli --save  mysql2 --save body-parser --save express-generator
 
 
-Criação do projeto com Express :
+CriaÃ§Ã£o do projeto com Express :
 
-	express –view=pug desafiostone01
+	express â€“view=pug desafiostone01
 
-Instalação das dependências do projeto:
+InstalaÃ§Ã£o das dependÃªncias do projeto:
 	
 	npm install
 
-Preparação das configurações do banco de dados:
+PreparaÃ§Ã£o das configuraÃ§Ãµes do banco de dados:
 
 	sequelize init
 
 
-Caso a instalação seja em ambiente Windows, alterar o arquivo models/index.js no trecho:
-	const config = require(__dirname + ‘/..\config\config.json’)[env];
+Caso a instalaÃ§Ã£o seja em ambiente Windows, alterar o arquivo models/index.js no trecho:
+	const config = require(__dirname + â€˜/..\config\config.jsonâ€™)[env];
 
 para:
-	const config = require(__dirname + ‘/../config/config.json’)[env];
+	const config = require(__dirname + â€˜/../config/config.jsonâ€™)[env];
 
 
-** LOG DE AÇÕES: arquivo access.log na raiz do projeto.
+** LOG DE AÃ‡Ã•ES: arquivo access.log na raiz do projeto. **
 
-** Instruções:
-*** Entrypoint da API : /empregados
+** InstruÃ§Ãµes: **
+*** Entrypoint da API : /empregados ***
 
