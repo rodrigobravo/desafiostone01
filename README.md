@@ -17,3 +17,11 @@ Instruções para criação do banco inicial e tabelas :
 Instalação dos pacotes node iniciais:
 
 	npm install -g sequelize-cli express-generator
+
+
+Criação do projeto com Express :
+
+	express –view=pug desafiostone01
+
+
+
