@@ -16,7 +16,7 @@ Instruções para criação do banco inicial e tabelas :
 
 Instalação dos pacotes node iniciais:
 
-	npm install -g --save sequelize-cli --save  mysql2 express-generator
+	npm install -g sequelize-cli --save  mysql2 --save body-parser --save express-generator
 
 
 Criação do projeto com Express :
