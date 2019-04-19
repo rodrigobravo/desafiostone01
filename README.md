@@ -16,12 +16,24 @@ Instruções para criação do banco inicial e tabelas :
 
 Instalação dos pacotes node iniciais:
 
-	npm install -g sequelize-cli express-generator
+	npm install -g --save sequelize-cli --save  mysql2 express-generator
 
 
 Criação do projeto com Express :
 
 	express –view=pug desafiostone01
 
+Instalação das dependências do projeto:
+	
+	npm install
+
+Preparação das configurações do banco de dados:
+
+	sequelize init
 
 
+Caso a instalação seja em ambiente Windows, alterar o arquivo models/index.js no trecho:
+	const config = require(__dirname + ‘/..\config\config.json’)[env];
+
+para:
+	const config = require(__dirname + ‘/../config/config.json’)[env];
