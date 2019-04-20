@@ -24,17 +24,26 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
 
 /* POST -- Adicionar empregado */
 router.post('/', function (req, res) {
 
-	let employee = req.body.employee;
-
-	if (!employee) {
-		return res.status(400).send({ error: true, message: 'Please provide user' });
+	let idade = req.body.idade;
+	let nome = req.body.nome;
+	let cargo = req.body.cargo;
+	let record = { idade: idade, nome: nome, cargo: cargo};
+	if (!idade) {
+		return res.status(400).send({ error: true, message: 'Preencha idade' });
 	}
-
-	dbConn.query("INSERT INTO empregados SET ? ", { employee: empregado }, function (error, results, fields) {
+	if (!nome) {
+		return res.status(400).send({ error: true, message: 'Preencha nome' });
+	}
+	if (!cargo) {
+		return res.status(400).send({ error: true, message: 'Preencha cargo' });
+	}
+	dbConn.query("INSERT INTO empregados SET ? ", record, function (error, results, fields) {
 		if (error) throw error;
 		return res.send({ error: false, data: results, message: 'New user has been created successfully.' });
 	});
