@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     cargo: DataTypes.STRING
   }, {});
   Empregado.associate = function(models) {
-    // associations can be defined here
+ 
   };
   return Empregado;
 };

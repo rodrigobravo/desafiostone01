@@ -3,6 +3,7 @@ var router = express.Router();
 var app = express();
 var mysql = require('mysql2');
 
+//configuracoes da base de dados MySQL
 var dbConn = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',

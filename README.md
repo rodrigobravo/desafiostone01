@@ -39,4 +39,8 @@ para:
 	const config = require(__dirname + ‘/../config/config.json’)[env];
 
 
-LOG DE AÇÕES: arquivo access.log na raiz do projeto.
+**LOG DE AÇÕES: arquivo access.log na raiz do projeto.
+
+**Instruções:
+***Entrypoint da API : /empregados
+
