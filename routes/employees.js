@@ -86,7 +86,7 @@ router.delete('/', function (req, res) {
 	}
 	dbConn.query('DELETE FROM empregados WHERE id = ?', [id], function (error, results, fields) {
 		if (error) throw error;
-		return res.send({ error: false, data: results, message: 'Empregado excluíd com sucesso });
+		return res.send({ error: false, data: results, message: 'Empregado excluido com sucesso'});
 	});
 }); 
 

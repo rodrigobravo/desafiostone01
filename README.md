@@ -37,3 +37,6 @@ Caso a instalação seja em ambiente Windows, alterar o arquivo models/index.js no
 
 para:
 	const config = require(__dirname + ‘/../config/config.json’)[env];
+
+
+LOG DE AÇÕES: arquivo access.log na raiz do projeto.
