@@ -78,4 +78,16 @@ router.put('/', function (req, res) {
 
 });
 
+/* DELETE -- Remover empregado com id */
+router.delete('/', function (req, res) {
+	let id = req.body.id;
+	if (!id) {
+		return res.status(400).send({ error: true, message: 'Fornecer id' });
+	}
+	dbConn.query('DELETE FROM empregados WHERE id = ?', [id], function (error, results, fields) {
+		if (error) throw error;
+		return res.send({ error: false, data: results, message: 'Empregado excluíd com sucesso });
+	});
+}); 
+
 module.exports = router;
