@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-
-var bodyParser = require('body-parser');
 var mysql = require('mysql2');
 
 var dbConn = mysql.createConnection({
@@ -12,7 +10,7 @@ var dbConn = mysql.createConnection({
 	database: 'stone'
 });
 
-// connect to database
+// conexao a base de dados
 dbConn.connect();
 
 
@@ -24,8 +22,8 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.json());       
+app.use(express.urlencoded()); 
 
 /* POST -- Adicionar empregado */
 router.post('/', function (req, res) {
@@ -45,8 +43,39 @@ router.post('/', function (req, res) {
 	}
 	dbConn.query("INSERT INTO empregados SET ? ", record, function (error, results, fields) {
 		if (error) throw error;
-		return res.send({ error: false, data: results, message: 'New user has been created successfully.' });
+		return res.send({ error: false, data: results, message: 'Novo empregado criado.' });
 	});
+});
+
+/* PUT -- Atualizar empregado com id */
+router.put('/', function (req, res) {
+	console.log(req.body);
+	let emp_id = req.body.id;
+	let idade = req.body.idade;
+	let nome = req.body.nome;
+	let cargo = req.body.cargo;
+	if (!emp_id) {
+		return res.status(400).send({ error: true, message: 'Preencha id' });
+	}
+	if (idade) {
+		dbConn.query("UPDATE empregados SET idade = ? WHERE id = ?", [idade, emp_id], function (error, results, fields) {
+			if (error) throw error;
+			return res.send({ error: false, data: results, message: 'Empregado atualizado com sucesso.' });
+		});
+	}
+	if (nome) {
+		dbConn.query("UPDATE empregados SET nome = ? WHERE id = ?", [nome, emp_id], function (error, results, fields) {
+			if (error) throw error;
+			return res.send({ error: false, data: results, message: 'Empregado atualizado com sucesso.' });
+		});
+	}
+	if (cargo) {
+		dbConn.query("UPDATE empregados SET cargo = ? WHERE id = ?", [cargo, emp_id], function (error, results, fields) {
+			if (error) throw error;
+			return res.send({ error: false, data: results, message: 'Empregado atualizado com sucesso.' });
+		});
+	}
+
 });
 
 module.exports = router;
