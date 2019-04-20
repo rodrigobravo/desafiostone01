@@ -44,7 +44,7 @@ para:
 ** Instruções: **
 *** Entrypoint da API : /empregados ***
 
-GET -> retorna todos os epregados da base
-POST -> Cria um novo empregado com os parametrs idade(integer), nome(string) e cargo(string) sendo passados no body da requisição
-PUT -> Edita um empregado com o respectivo id(integer) sendo passado no body da requisição, juntamente com o campo a ser editado
-DEETE -> Remove o empregado com o id passado no body da requisição
+* GET -> retorna todos os epregados da base
+* POST -> Cria um novo empregado com os parametrs idade(integer), nome(string) e cargo(string) sendo passados no body da requisição
+* PUT -> Edita um empregado com o respectivo id(integer) sendo passado no body da requisição, juntamente com o campo a ser editado
+* DEETE -> Remove o empregado com o id passado no body da requisição
