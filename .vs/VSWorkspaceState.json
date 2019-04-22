@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\models",
+    "\\routes"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\app.js",
   "PreviewInSolutionExplorer": false
 }

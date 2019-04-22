@@ -19,7 +19,7 @@ dbConn.connect();
 router.get('/', function(req, res, next) {
 	dbConn.query('SELECT * FROM empregados', function (error, results, fields) {
 			if (error) throw error;
-			return res.send({ data: results});
+			return res.send(results);
 	});
 });
 
