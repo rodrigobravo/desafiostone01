@@ -16,11 +16,19 @@ dbConn.connect();
 
 
 /* GET -- Listagem de empregados no entrypoint /empregados */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
+	let id = req.query.id;
+	if (id) {
+		dbConn.query("SELECT * FROM empregados WHERE id = ?", [id], function (error, results, fields) {
+			if (error) throw error;
+			return res.send(results);
+		});}
+	
 	dbConn.query('SELECT * FROM empregados', function (error, results, fields) {
 			if (error) throw error;
 			return res.send(results);
 	});
+	
 });
 
 app.use(express.json());       
